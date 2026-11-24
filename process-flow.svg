@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="850" viewBox="0 0 1600 850" role="img" aria-labelledby="title desc">
+ <title id="title">Pathshala Pocket process flow</title>
+ <desc id="desc">A teacher prepares a lesson pack online, the student downloads and studies it offline, answers are saved and practice adapts locally, and progress syncs to the teacher dashboard when internet returns.</desc>
+ <defs>
+  <style>
+   .t{font-family:Arial,Helvetica,sans-serif;fill:#25354a}.title{font-size:30px;font-weight:700}.sub{font-size:16px;fill:#687386}.h{font-size:18px;font-weight:700}.b{font-size:15px}.s{font-size:13px;fill:#687386}.box{fill:#fff;stroke:#dce2eb;stroke-width:2}.teacher{fill:#fff8ec;stroke:#e9cfaa;stroke-width:2}.student{fill:#f3f6ff;stroke:#b8c8eb;stroke-width:2}.cloud{fill:#f6f7fb;stroke:#d0d6e1;stroke-width:2}.orange{stroke:#e58a37;stroke-width:4;fill:none;stroke-linecap:round;stroke-linejoin:round}.blue{stroke:#4b70bd;stroke-width:4;fill:none;stroke-linecap:round;stroke-linejoin:round}.green{stroke:#34896f;stroke-width:4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  </style>
+  <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#4b70bd"/></marker>
+  <marker id="g" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#34896f"/></marker>
+  <marker id="o" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#e58a37"/></marker>
+ </defs>
+ <rect width="1600" height="850" rx="22" fill="#fffdf8"/>
+ <text x="55" y="60" class="t title">Pathshala Pocket · Process Flow</text>
+ <text x="55" y="91" class="t sub">Lessons are prepared online, used offline, then progress is synced when connectivity returns</text>
+
+ <!-- Stage 1 -->
+ <rect x="55" y="145" width="330" height="245" rx="20" class="teacher"/>
+ <circle cx="100" cy="193" r="25" fill="#ffecd5"/><text x="100" y="201" text-anchor="middle" class="t h">1</text>
+ <text x="140" y="190" class="t h">Teacher prepares pack</text>
+ <text x="85" y="242" class="t b">Select grade, topic, and language.</text>
+ <text x="85" y="272" class="t b">Choose the lesson and practice set.</text>
+ <text x="85" y="321" class="t s">Teacher dashboard · connected</text>
+ <text x="85" y="350" class="t s">Content stored in Amazon S3</text>
+
+ <!-- Stage 2 -->
+ <rect x="450" y="145" width="330" height="245" rx="20" class="student"/>
+ <circle cx="495" cy="193" r="25" fill="#e2eaff"/><text x="495" y="201" text-anchor="middle" class="t h">2</text>
+ <text x="535" y="190" class="t h">Download lesson pack</text>
+ <text x="480" y="242" class="t b">Student device downloads it</text>
+ <text x="480" y="272" class="t b">before going offline.</text>
+ <text x="480" y="321" class="t s">React PWA · Service Worker</text>
+ <text x="480" y="350" class="t s">Cache API · lesson assets</text>
+ <path d="M385 267h57" class="orange" marker-end="url(#o)"/>
+
+ <!-- Stage 3 -->
+ <rect x="845" y="145" width="330" height="245" rx="20" class="student"/>
+ <circle cx="890" cy="193" r="25" fill="#e2eaff"/><text x="890" y="201" text-anchor="middle" class="t h">3</text>
+ <text x="930" y="190" class="t h">Learn and practice</text>
+ <text x="875" y="242" class="t b">Student studies and answers</text>
+ <text x="875" y="272" class="t b">short quiz questions offline.</text>
+ <text x="875" y="321" class="t s">IndexedDB saves answers locally</text>
+ <text x="875" y="350" class="t s">Rule-based logic picks next item</text>
+ <path d="M780 267h57" class="blue" marker-end="url(#a)"/>
+
+ <!-- Stage 4 -->
+ <rect x="1240" y="145" width="305" height="245" rx="20" class="student"/>
+ <circle cx="1285" cy="193" r="25" fill="#e2eaff"/><text x="1285" y="201" text-anchor="middle" class="t h">4</text>
+ <text x="1325" y="190" class="t h">Save for later sync</text>
+ <text x="1270" y="242" class="t b">Progress waits on device</text>
+ <text x="1270" y="272" class="t b">while internet is unavailable.</text>
+ <text x="1270" y="321" class="t s">Local sync queue · IndexedDB</text>
+ <text x="1270" y="350" class="t s">No connection required yet</text>
+ <path d="M1175 267h57" class="blue" marker-end="url(#a)"/>
+
+ <!-- Offline boundary -->
+ <path d="M430 420v24h745v-24" stroke="#e58a37" stroke-width="2.5" stroke-dasharray="8 8" fill="none"/>
+ <rect x="670" y="425" width="265" height="34" rx="17" fill="#fff4e6"/>
+ <text x="802" y="448" text-anchor="middle" class="t s">OFFLINE LEARNING CONTINUES</text>
+
+ <!-- Return online stage -->
+ <rect x="220" y="515" width="330" height="205" rx="20" class="cloud"/>
+ <circle cx="265" cy="563" r="25" fill="#e5f4ed"/><text x="265" y="571" text-anchor="middle" class="t h">5</text>
+ <text x="305" y="560" class="t h">Connection returns</text>
+ <text x="250" y="612" class="t b">App detects network and sends</text>
+ <text x="250" y="642" class="t b">pending progress for sync.</text>
+ <text x="250" y="687" class="t s">Retry if connection drops</text>
+
+ <rect x="635" y="515" width="330" height="205" rx="20" class="cloud"/>
+ <circle cx="680" cy="563" r="25" fill="#e5f4ed"/><text x="680" y="571" text-anchor="middle" class="t h">6</text>
+ <text x="720" y="560" class="t h">AWS receives progress</text>
+ <text x="665" y="612" class="t b">AppSync API sends updates</text>
+ <text x="665" y="642" class="t b">to DynamoDB class records.</text>
+ <text x="665" y="687" class="t s">Teacher access protected by Cognito</text>
+
+ <rect x="1050" y="515" width="330" height="205" rx="20" class="teacher"/>
+ <circle cx="1095" cy="563" r="25" fill="#ffecd5"/><text x="1095" y="571" text-anchor="middle" class="t h">7</text>
+ <text x="1135" y="560" class="t h">Teacher reviews progress</text>
+ <text x="1080" y="612" class="t b">Dashboard shows completed</text>
+ <text x="1080" y="642" class="t b">practice and topics to revisit.</text>
+ <text x="1080" y="687" class="t s">Uses synced class data</text>
+
+ <path d="M550 617h77" class="green" marker-end="url(#g)"/>
+ <path d="M965 617h77" class="green" marker-end="url(#g)"/>
+ <text x="800" y="785" text-anchor="middle" class="t s">Proposed blueprint only · Offline caching, local progress, and cloud sync are planned behaviors, not implemented features.</text>
+</svg>

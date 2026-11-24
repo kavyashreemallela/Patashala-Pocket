@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="850" viewBox="0 0 1600 850" role="img" aria-labelledby="title desc">
+ <title id="title">Pathshala Pocket proposed technical architecture</title>
+ <desc id="desc">A React progressive web app stores lessons and student progress locally for offline use. When connectivity returns, progress synchronizes through AWS Amplify and AppSync to DynamoDB, while S3 stores downloadable lesson packs.</desc>
+ <defs>
+  <style>
+   .t{font-family:Arial,Helvetica,sans-serif;fill:#24354a}.title{font-size:30px;font-weight:700}.sub{font-size:17px;fill:#6b7482}.h{font-size:20px;font-weight:700}.b{font-size:16px}.s{font-size:14px;fill:#6b7482}.box{fill:#fff;stroke:#d9e0eb;stroke-width:2}.local{fill:#fffaf1;stroke:#e7c99e;stroke-width:2}.aws{fill:#f3f6ff;stroke:#aebfe8;stroke-width:2}.blue{stroke:#4c70bd;stroke-width:4;fill:none;stroke-linecap:round;stroke-linejoin:round}.orange{stroke:#e88b38;stroke-width:4;fill:none;stroke-linecap:round;stroke-linejoin:round}.green{stroke:#358a71;stroke-width:4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  </style>
+  <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#4c70bd"/></marker>
+  <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#358a71"/></marker>
+  <marker id="arrowOrange" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#e88b38"/></marker>
+ </defs>
+ <rect width="1600" height="850" rx="22" fill="#fbfcff"/>
+ <text x="60" y="62" class="t title">Pathshala Pocket · Proposed Architecture</text>
+ <text x="60" y="94" class="t sub">Blueprint concept · student learning continues offline; progress syncs when a connection returns</text>
+
+ <!-- Student device boundary -->
+ <rect x="55" y="135" width="650" height="645" rx="24" class="local"/>
+ <text x="88" y="180" class="t h">STUDENT DEVICE · OFFLINE-FIRST PWA</text>
+ <text x="88" y="207" class="t s">Runs in the browser after lesson packs are downloaded</text>
+ <rect x="95" y="245" width="260" height="145" rx="16" class="box"/>
+ <circle cx="132" cy="282" r="19" fill="#e9efff"/><path d="M122 288h20m-10-18v20" class="blue"/>
+ <text x="164" y="281" class="t h">React + TypeScript</text>
+ <text x="119" y="325" class="t b">Student lesson and quiz screens</text>
+ <text x="119" y="352" class="t s">PWA can be added to home screen</text>
+ <rect x="390" y="245" width="270" height="145" rx="16" class="box"/>
+ <circle cx="428" cy="282" r="19" fill="#e9efff"/><path d="M416 281q12-17 24 0M419 289q9-12 18 0" class="blue"/>
+ <text x="460" y="281" class="t h">Service Worker</text>
+ <text x="415" y="325" class="t b">Caches app shell and assets</text>
+ <text x="415" y="352" class="t s">Loads cached screens offline</text>
+ <path d="M355 317h28" class="blue" marker-end="url(#arrowBlue)"/>
+ <rect x="95" y="425" width="260" height="160" rx="16" class="box"/>
+ <circle cx="132" cy="462" r="19" fill="#fff1e3"/><path d="M132 447v25m-10-10 10 10 10-10" class="orange"/>
+ <text x="164" y="461" class="t h">IndexedDB + Cache</text>
+ <text x="119" y="505" class="t b">Downloaded lesson pack</text>
+ <text x="119" y="532" class="t b">Unsent quiz answers</text>
+ <text x="119" y="559" class="t s">Stored locally on the device</text>
+ <rect x="390" y="425" width="270" height="160" rx="16" class="box"/>
+ <circle cx="428" cy="462" r="19" fill="#e7f5ee"/><path d="M418 462h20m-10-10v20" class="green"/>
+ <text x="460" y="461" class="t h">Rule-based practice</text>
+ <text x="415" y="505" class="t b">Checks each answer locally</text>
+ <text x="415" y="532" class="t b">Chooses next practice item</text>
+ <text x="415" y="559" class="t s">No AI model needed offline</text>
+ <path d="M355 505h28" class="green" marker-end="url(#arrowGreen)"/>
+ <rect x="95" y="625" width="565" height="105" rx="16" fill="#fff" stroke="#e7c99e" stroke-width="2"/>
+ <text x="120" y="665" class="t h">Pending sync queue</text>
+ <text x="120" y="695" class="t b">Progress waits safely on device until connectivity returns.</text>
+
+ <!-- Connectivity bridge -->
+ <rect x="735" y="300" width="150" height="230" rx="22" fill="#fff" stroke="#d9e0eb" stroke-width="2"/>
+ <circle cx="810" cy="360" r="36" fill="#e7f5ee"/><path d="M790 360a20 20 0 0 1 36-12l7 7m0-13v13h-13M830 379a20 20 0 0 1-36 12l-7-7m0 13v-13h13" class="green"/>
+ <text x="810" y="430" text-anchor="middle" class="t h">When online</text>
+ <text x="810" y="461" text-anchor="middle" class="t s">Upload pending</text>
+ <text x="810" y="483" text-anchor="middle" class="t s">progress; fetch</text>
+ <text x="810" y="505" text-anchor="middle" class="t s">updated packs</text>
+ <path d="M660 675 C720 675 710 495 755 495" class="green" marker-end="url(#arrowGreen)"/>
+ <path d="M885 415h62" class="green" marker-end="url(#arrowGreen)"/>
+
+ <!-- Cloud backend -->
+ <rect x="945" y="135" width="600" height="645" rx="24" class="aws"/>
+ <text x="980" y="180" class="t h">AWS CLOUD · ONLINE SERVICES</text>
+ <text x="980" y="207" class="t s">Stores content and makes synced progress available to teachers</text>
+ <rect x="990" y="245" width="240" height="128" rx="16" class="box"/>
+ <circle cx="1028" cy="282" r="19" fill="#fff1e3"/><path d="M1017 286h22M1020 278h16M1024 270h8" class="orange"/>
+ <text x="1060" y="280" class="t h">AWS Amplify</text>
+ <text x="1014" y="323" class="t b">Hosts the web app</text>
+ <text x="1014" y="348" class="t s">Deployment and frontend setup</text>
+ <rect x="1260" y="245" width="240" height="128" rx="16" class="box"/>
+ <circle cx="1298" cy="282" r="19" fill="#e9efff"/><circle cx="1298" cy="278" r="7" class="blue"/><path d="M1285 295q13-18 26 0" class="blue"/>
+ <text x="1330" y="280" class="t h">Amazon Cognito</text>
+ <text x="1284" y="323" class="t b">Teacher sign-in</text>
+ <text x="1284" y="348" class="t s">Protects dashboard access</text>
+ <rect x="990" y="420" width="240" height="145" rx="16" class="box"/>
+ <circle cx="1028" cy="457" r="19" fill="#e9efff"/><path d="M1017 451h22v15h-22zM1022 446h12" class="blue"/>
+ <text x="1060" y="455" class="t h">AWS AppSync</text>
+ <text x="1014" y="499" class="t b">GraphQL data API</text>
+ <text x="1014" y="526" class="t s">Receives and serves updates</text>
+ <rect x="1260" y="420" width="240" height="145" rx="16" class="box"/>
+ <circle cx="1298" cy="457" r="19" fill="#fff1e3"/><path d="M1286 450h24v20h-24zM1291 446h14" class="orange"/>
+ <text x="1330" y="455" class="t h">Amazon DynamoDB</text>
+ <text x="1284" y="499" class="t b">Class and progress data</text>
+ <text x="1284" y="526" class="t s">Online source of record</text>
+ <path d="M1230 492h25" class="blue" marker-end="url(#arrowBlue)"/>
+ <rect x="990" y="620" width="510" height="110" rx="16" class="box"/>
+ <circle cx="1030" cy="674" r="21" fill="#fff1e3"/><path d="M1018 668h24v20h-24zM1024 662h12" class="orange"/>
+ <text x="1070" y="663" class="t h">Amazon S3 · Lesson pack storage</text>
+ <text x="1070" y="695" class="t b">Regional-language text, images, and optional compressed audio</text>
+ <path d="M1110 373v36h-58v8" class="orange" marker-end="url(#arrowOrange)"/>
+ <path d="M1110 565v34h120v21" class="orange" marker-end="url(#arrowOrange)"/>
+ <path d="M1380 420v-34h-80v-13" class="blue" marker-end="url(#arrowBlue)"/>
+ <text x="800" y="822" text-anchor="middle" class="t s">Proposed design only · Offline storage and sync logic are planned features, not implemented in this submission phase.</text>
+</svg>

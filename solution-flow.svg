@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="330" viewBox="0 0 1400 330" role="img" aria-labelledby="title desc">
+  <title id="title">Pathshala Pocket learning flow</title>
+  <desc id="desc">Download lessons, practice offline, get adaptive exercises, and sync progress with a teacher when connected.</desc>
+  <defs>
+    <style>
+      .ink{stroke:#26364a;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;fill:none}
+      .orange{stroke:#ef8d35;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;fill:none}
+      .blue{stroke:#4c79c6;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;fill:none}
+      .label{font:600 24px Arial,sans-serif;fill:#26364a}
+      .small{font:400 18px Arial,sans-serif;fill:#626262}
+    </style>
+  </defs>
+  <g transform="translate(75 30)">
+    <!-- Download lesson -->
+    <circle cx="110" cy="100" r="76" fill="#fffaf0" stroke="#e7d9bd" stroke-width="3"/>
+    <rect x="80" y="56" width="60" height="88" rx="8" class="ink"/>
+    <path d="M92 76h36M92 89h28" class="blue"/>
+    <path d="M110 99v25m-12-12 12 12 12-12" class="orange"/>
+    <text x="110" y="215" text-anchor="middle" class="label">Download once</text>
+    <text x="110" y="244" text-anchor="middle" class="small">Lesson pack saved</text>
+    <text x="110" y="268" text-anchor="middle" class="small">on the device</text>
+    <!-- arrow -->
+    <path d="M205 100h105m-16-14 16 14-16 14" class="orange"/>
+    <!-- Practice -->
+    <circle cx="420" cy="100" r="76" fill="#fffaf0" stroke="#e7d9bd" stroke-width="3"/>
+    <path d="M378 84h84v54h-84z" class="ink"/>
+    <path d="M394 101l10 10 20-23" class="blue"/>
+    <path d="M394 124h50" class="orange"/>
+    <text x="420" y="215" text-anchor="middle" class="label">Practice offline</text>
+    <text x="420" y="244" text-anchor="middle" class="small">Short activities in</text>
+    <text x="420" y="268" text-anchor="middle" class="small">a regional language</text>
+    <path d="M515 100h105m-16-14 16 14-16 14" class="orange"/>
+    <!-- Adapt -->
+    <circle cx="730" cy="100" r="76" fill="#fffaf0" stroke="#e7d9bd" stroke-width="3"/>
+    <path d="M696 129V96l18-16 18 16v33M741 129V77l18-16 18 16v52" class="ink"/>
+    <path d="M701 111h8m31-8h8m-47 20h8m31-5h8" class="blue"/>
+    <path d="M713 65c12-10 29-10 41 0" class="orange"/>
+    <text x="730" y="215" text-anchor="middle" class="label">Adapt practice</text>
+    <text x="730" y="244" text-anchor="middle" class="small">Next questions respond</text>
+    <text x="730" y="268" text-anchor="middle" class="small">to learner answers</text>
+    <path d="M825 100h105m-16-14 16 14-16 14" class="orange"/>
+    <!-- Sync -->
+    <circle cx="1040" cy="100" r="76" fill="#fffaf0" stroke="#e7d9bd" stroke-width="3"/>
+    <path d="M1001 103a41 41 0 0 1 70-25l10 10m0-21v21h-21M1079 105a41 41 0 0 1-70 25l-10-10m0 21v-21h21" class="blue"/>
+    <path d="M1030 100h20m-10-10v20" class="orange"/>
+    <text x="1040" y="215" text-anchor="middle" class="label">Sync for teacher</text>
+    <text x="1040" y="244" text-anchor="middle" class="small">Progress uploads when</text>
+    <text x="1040" y="268" text-anchor="middle" class="small">connection returns</text>
+  </g>
+</svg>

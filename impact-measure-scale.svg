@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="360" viewBox="0 0 1400 360" role="img" aria-labelledby="title desc">
+ <title id="title">Pathshala Pocket impact, measure, scale</title>
+ <desc id="desc">A proposed plan: start with a pilot classroom, measure participation, learning progress, offline sync and teacher usefulness, then expand with reviewed lesson packs for more grades and languages.</desc>
+ <defs>
+  <style>
+   .t{font-family:Arial,Helvetica,sans-serif;fill:#27364a}.head{font-size:23px;font-weight:700}.body{font-size:16px}.small{font-size:14px;fill:#6d7786}.panel{fill:#fff;stroke:#e3e6eb;stroke-width:2}.orange{stroke:#e58a37;stroke-width:5;fill:none;stroke-linecap:round;stroke-linejoin:round}.blue{stroke:#4b70bd;stroke-width:5;fill:none;stroke-linecap:round;stroke-linejoin:round}.green{stroke:#39896f;stroke-width:5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  </style>
+  <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#8993a1"/></marker>
+ </defs>
+ <rect width="1400" height="360" rx="22" fill="#fffdf8"/>
+ <!-- pilot -->
+ <rect x="35" y="48" width="390" height="235" rx="20" class="panel"/>
+ <circle cx="90" cy="100" r="30" fill="#fff0de"/><path d="M75 102h30M80 93h20M84 84h12M80 111h20" class="orange"/>
+ <text x="140" y="100" class="t head">1 · PILOT</text>
+ <text x="65" y="158" class="t body">Start with one class, one topic,</text>
+ <text x="65" y="184" class="t body">and one regional language.</text>
+ <text x="65" y="229" class="t small">Check that students can use the lesson</text>
+ <text x="65" y="251" class="t small">and quiz with an unreliable connection.</text>
+ <!-- arrow -->
+ <path d="M435 164h65" stroke="#8993a1" stroke-width="4" marker-end="url(#arr)"/>
+ <!-- measure -->
+ <rect x="510" y="48" width="390" height="235" rx="20" class="panel"/>
+ <circle cx="565" cy="100" r="30" fill="#eaf0ff"/><path d="M550 110v-17l10 7 8-12 12 16" class="blue"/>
+ <text x="615" y="100" class="t head">2 · MEASURE</text>
+ <text x="540" y="158" class="t body">Track lesson and quiz completion,</text>
+ <text x="540" y="184" class="t body">topic progress, offline sync success,</text>
+ <text x="540" y="210" class="t body">and teacher usefulness.</text>
+ <text x="540" y="251" class="t small">These are pilot measures, not proven results.</text>
+ <path d="M910 164h65" stroke="#8993a1" stroke-width="4" marker-end="url(#arr)"/>
+ <!-- scale -->
+ <rect x="985" y="48" width="380" height="235" rx="20" class="panel"/>
+ <circle cx="1040" cy="100" r="30" fill="#e8f5ef"/><path d="M1025 110v-13l10 7 8-13 12-10M1055 84v10h-10" class="green"/>
+ <text x="1090" y="100" class="t head">3 · SCALE</text>
+ <text x="1015" y="158" class="t body">Add teacher-reviewed lesson packs</text>
+ <text x="1015" y="184" class="t body">for more topics, grades, and</text>
+ <text x="1015" y="210" class="t body">languages as needs are validated.</text>
+ <text x="1015" y="251" class="t small">Expand based on pilot feedback.</text>
+ <text x="700" y="326" text-anchor="middle" class="t small">PROPOSED IMPACT PATH · BLUEPRINT ONLY · NO OUTCOMES CLAIMED YET</text>
+</svg>
